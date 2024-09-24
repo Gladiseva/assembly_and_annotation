@@ -1,4 +1,4 @@
-# RNA-Seq and PacBio HiFi Data Analysis
+# RNA-Seq and PacBio HiFi Data Analysis 🧬 
 
 ## Overview
 
@@ -6,7 +6,7 @@ This project involves analyzing two datasets:
 1. **PacBio HiFi Reads**: Accession Had-6bn
 2. **Illumina RNA-seq**: Accession RNAseq_Sha
 
-## Part 1: Basic Read Statistics (FastQC)
+## Part 1: Basic Read Statistics (FastQC) 📈  
 
 Run FastQC on your FASTQ files using the following SLURM batch script:
 
@@ -16,7 +16,7 @@ sbatch ./scripts/01-run_fastqc.sh /data/users/lgladiseva/assembly_course/Had-6b/
 ```
 
 
-## Part 2: Filter and Trim Reads (fastp)
+## Part 2: Filter and Trim Reads (fastp) ⚙️
 
 Example:
 ```bash
