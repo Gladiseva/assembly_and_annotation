@@ -6,7 +6,7 @@
 #SBATCH --job-name=fastqc
 #SBATCH --partition=pibu_el8
 
-# run with sbatch ./scripts/01-run_fastqc.sh /data/users/lgladiseva/assembly_course/Had-6b/ERR11437317.fastq.gz
+# run with sbatch ./scripts/01-run_fastqc.sh /data/users/lgladiseva/assembly_course/IlluminaRNAseq/filtered_trimmed_RNAseq_1.fastq.gz
 
 # Set default WORKDIR and output directory
 WORKDIR=/data/users/lgladiseva/assembly_course
