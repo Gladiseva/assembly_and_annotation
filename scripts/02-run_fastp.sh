@@ -25,11 +25,8 @@ fastp \
     -o ${ILLUMINA_OUTPUT_DIR}/filtered_trimmed_RNAseq_1.fastq.gz \
     -O ${ILLUMINA_OUTPUT_DIR}/filtered_trimmed_RNAseq_2.fastq.gz \
     --detect_adapter_for_pe \
-    --cut_mean_quality 25 \
-    --cut_window_size 4 \
-    --cut_front 10 \
     --cut_tail 15 \
-    --length_required 30 \
+    --length_required 50 \
     --thread 4 \
     --html ${ILLUMINA_OUTPUT_DIR}/fastp_report.html \
     --json ${ILLUMINA_OUTPUT_DIR}/fastp_report.json
