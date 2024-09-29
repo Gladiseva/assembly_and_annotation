@@ -27,4 +27,26 @@ sbatch ./scripts/02-run_fastp.sh
 - **Illumina RNAseq Data**: Filtered and trimmed using specific parameters to address quality issues.
 - **PacBio HiFi Data**: Analyzed without filtering to retain all reads and determine the total number of bases.
 
+## Part 3: Assembly of Reads 🧩
+For PacBio HiFi Data Analysis, three assembly tools were utilized:
+
+- **Flye:**
+- **Hifiasm:**
+- **LJA:**
+
+For Illumina RNA-seq Data Analysis:
+- **Trinity**
+
+Example:
+```bash
+sbatch ./scripts/04-trinity_assembly.sh
+```
+
+## Part 4: Generate Assembly Statistics 📊
+After the assembly process, GFAstats was run on the outputs from each assembly tool to obtain assembly statistics.
+
+Example:
+```bash
+sbatch ./scripts/05-gfstats.sh
+
 
