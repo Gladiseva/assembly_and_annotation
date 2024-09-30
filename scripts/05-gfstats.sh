@@ -12,16 +12,16 @@ OUTDIR=$WORKDIR/assembly_out
 GFASTATS_OUTDIR=$WORKDIR/gfastats_results
 mkdir -p $GFASTATS_OUTDIR
 
-HIFIASM_ASM=$OUTDIR/hifiasm/ERR11437354_fp.asm.bp.p_ctg.fa
-LJA_ASM=$OUTDIR/lja/ERR11437354_fp.asm.fasta 
-FLYE_ASM=$OUTDIR/00-assembly/assembly.fasta
-TRINITY_ASM=$OUTDIR/trinity/Trinity.fasta
+HIFIASM_ASM=$OUTDIR/hifiasm/PacBioHiFi_trimmed.asm.bp.p_ctg.gfa
+LJA_ASM=$OUTDIR/lja/k501/disjointigs.fasta
+FLYE_ASM=$OUTDIR/00-assembly/draft_assembly.fasta
+TRINITY_ASM=$OUTDIR/trinity/both.fa
 
-module load Gfastats/1.3.6-foss-2020a
+GFASTATS_CONTAINER=/containers/apptainer/gfastats_1.3.7.sif
 
-gfastats -o $GFASTATS_OUTDIR/hifiasm_gfastats.txt $HIFIASM_ASM
-gfastats -o $GFASTATS_OUTDIR/lja_gfastats.txt $LJA_ASM
-gfastats -o $GFASTATS_OUTDIR/flye_gfastats.txt $FLYE_ASM
-gfastats -o $GFASTATS_OUTDIR/trinity_gfastats.txt $TRINITY_ASM
+apptainer exec $GFASTATS_CONTAINER gfastats -o $GFASTATS_OUTDIR/hifiasm_gfastats.txt $HIFIASM_ASM
+apptainer exec $GFASTATS_CONTAINER gfastats -o $GFASTATS_OUTDIR/lja_gfastats.txt $LJA_ASM
+apptainer exec $GFASTATS_CONTAINER gfastats -o $GFASTATS_OUTDIR/flye_gfastats.txt $FLYE_ASM
+apptainer exec $GFASTATS_CONTAINER gfastats -o $GFASTATS_OUTDIR/trinity_gfastats.txt $TRINITY_ASM
 
 echo "GFASTATS analysis completed. Results stored in $GFASTATS_OUTDIR"
