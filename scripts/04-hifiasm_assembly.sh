@@ -2,7 +2,7 @@
   
 #SBATCH --cpus-per-task=32
 #SBATCH --mem=64G
-#SBATCH --time=04:00:00
+#SBATCH --time=1-00:00:00
 #SBATCH --job-name=hifiasm_asmbly
 #SBATCH --partition=pibu_el8
 
