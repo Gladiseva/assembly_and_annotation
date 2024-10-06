@@ -1,4 +1,4 @@
-# RNA-Seq and PacBio HiFi Data Analysis 🧬 
+# Illumina RNA-Seq and PacBio HiFi Reads Data Analysis 🧬 
 
 ## Overview
 
@@ -12,7 +12,7 @@ Run FastQC on your FASTQ files using the following SLURM batch script:
 
 Example:
 ```bash
-sbatch ./scripts/01-run_fastqc.sh /data/users/lgladiseva/assembly_course/Had-6b/ERR11437317.fastq.gz
+sbatch ./scripts/01-run_fastqc.sh /path/to/accession/Had-6b/ERR11437317.fastq.gz
 ```
 
 
@@ -27,7 +27,18 @@ sbatch ./scripts/02-run_fastp.sh
 - **Illumina RNAseq Data**: Filtered and trimmed using specific parameters to address quality issues.
 - **PacBio HiFi Data**: Analyzed without filtering to retain all reads and determine the total number of bases.
 
-## Part 3: Assembly of Reads 🧩
+## Part 3: Perform k-mer counting 🪼 🔢
+For PacBio HiFi Data Analysis, three assembly tools were utilized:
+
+- **counting k-mers (jellyfish count**
+- **creating a histogram (jellyfish histo):**
+
+Example:
+```bash
+sbatch ./scripts/03-kmer.sh
+```
+
+## Part 4: Assembly of Reads 🧩
 For PacBio HiFi Data Analysis, three assembly tools were utilized:
 
 - **Flye:**
@@ -40,13 +51,7 @@ For Illumina RNA-seq Data Analysis:
 Example:
 ```bash
 sbatch ./scripts/04-trinity_assembly.sh
+sbatch ./scripts/04-hifi_assembly.sh
+sbatch ./scripts/04-lja_assembly.sh
+sbatch ./scripts/04_flye_assembly.sh
 ```
-
-## Part 4: Generate Assembly Statistics 📊
-After the assembly process, GFAstats was run on the outputs from each assembly tool to obtain assembly statistics.
-
-Example:
-```bash
-sbatch ./scripts/05-gfstats.sh
-
-
