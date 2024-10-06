@@ -65,7 +65,7 @@ Example:
 ```bash
 sbatch ./scripts/05-BUSCO.sh + ./scripts/06_plots_busco.sh
 sbatch ./scripts/05-QUAST_no_reference.sh and ./scripts/05-QUAST_with_reference.sh
-sbatch ./scripts/05-merqury.sh
+sbatch ./scripts/05-merqury_find_best_k.sh + ./scripts/05-merqury_evaluation.sh 
 ```
 - **Comparing genomes:** nucmer and mummer
 - 
