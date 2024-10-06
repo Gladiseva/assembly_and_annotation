@@ -73,3 +73,11 @@ sbatch ./scripts/05-merqury_find_best_k.sh + ./scripts/05-merqury_evaluation.sh
 ```bash
 sbatch ./scripts/07_comparison.sh
 ```
+
+## Part 6: Comparing genomes ⚖️
+- **Run nucmer and mummer**: compare the assembled genomes from flye, hifiasm and LJA against the Arabidopsis thaliana reference 🌱 and against each other 🔄.
+
+Example:
+```bash
+sbatch ./scripts/07-comparison.sh
+```
