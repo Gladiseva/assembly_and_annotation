@@ -30,8 +30,8 @@ sbatch ./scripts/02-run_fastp.sh
 ## Part 3: Perform k-mer counting 🪼 🔢
 For PacBio HiFi Data Analysis, three assembly tools were utilized:
 
-- **counting k-mers (jellyfish count**
-- **creating a histogram (jellyfish histo):**
+- **counting k-mers** (jellyfish count)
+- **creating a histogram** (jellyfish histo)
 
 Example:
 ```bash
@@ -41,9 +41,9 @@ sbatch ./scripts/03-kmer.sh
 ## Part 4: Assembly of Reads 🧩
 For PacBio HiFi Data Analysis, three assembly tools were utilized:
 
-- **Flye:**
-- **Hifiasm:**
-- **LJA:**
+- **Flye**
+- **Hifiasm**
+- **LJA**
 
 For Illumina RNA-seq Data Analysis:
 - **Trinity**
@@ -54,4 +54,22 @@ sbatch ./scripts/04-trinity_assembly.sh
 sbatch ./scripts/04-hifi_assembly.sh
 sbatch ./scripts/04-lja_assembly.sh
 sbatch ./scripts/04_flye_assembly.sh
+```
+
+## Part 5: Assembly evaluation and comparing genomes 🔬📊
+- **Assessing quality with BUSCO**
+- **Assessing quality with QUAST**
+- **Assessing quality with merqury**
+
+Example:
+```bash
+sbatch ./scripts/05-BUSCO.sh + ./scripts/06_plots_busco.sh
+sbatch ./scripts/05-QUAST.sh
+sbatch ./scripts/05-merqury.sh
+```
+- **Comparing genomes:** nucmer and mummer
+- 
+  Example:
+```bash
+sbatch ./scripts/07_comparison.sh
 ```
