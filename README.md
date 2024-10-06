@@ -58,13 +58,13 @@ sbatch ./scripts/04_flye_assembly.sh
 
 ## Part 5: Assembly evaluation and comparing genomes 🔬📊
 - **Assessing quality with BUSCO**
-- **Assessing quality with QUAST**
+- **Assessing quality with QUAST** (with and without reference genome)
 - **Assessing quality with merqury**
 
 Example:
 ```bash
 sbatch ./scripts/05-BUSCO.sh + ./scripts/06_plots_busco.sh
-sbatch ./scripts/05-QUAST.sh
+sbatch ./scripts/05-QUAST_no_reference.sh and ./scripts/05-QUAST_with_reference.sh
 sbatch ./scripts/05-merqury.sh
 ```
 - **Comparing genomes:** nucmer and mummer
