@@ -67,12 +67,6 @@ sbatch ./scripts/05-BUSCO.sh + ./scripts/06_plots_busco.sh
 sbatch ./scripts/05-QUAST_no_reference.sh and ./scripts/05-QUAST_with_reference.sh
 sbatch ./scripts/05-merqury_find_best_k.sh + ./scripts/05-merqury_evaluation.sh 
 ```
-- **Comparing genomes:** nucmer and mummer
-- 
-  Example:
-```bash
-sbatch ./scripts/07_comparison.sh
-```
 
 ## Part 6: Comparing genomes ⚖️
 - **Run nucmer and mummer**: compare the assembled genomes from flye, hifiasm and LJA against the Arabidopsis thaliana reference 🌱 and against each other 🔄.
@@ -80,4 +74,5 @@ sbatch ./scripts/07_comparison.sh
 Example:
 ```bash
 sbatch ./scripts/07-comparison.sh
+sbatch ./scripts/08-accession_comparison.sh
 ```
