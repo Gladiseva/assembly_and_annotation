@@ -7,7 +7,7 @@
 #SBATCH --partition=pibu_el8
 
 module load Anaconda3/2022.05
-conda env create -f EDTA_2.2.x.yml
+#conda env create -f EDTA_2.2.x.yml
 conda activate EDTA2
 
 WORKDIR=/data/users/lgladiseva/annotation_course
