@@ -12,6 +12,7 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 #BEFORE RUNNING do: git clone https://github.com/oushujun/EDTA.git in $WORKDIR
+# use EDTA_2.2.x.yml to create an env EDTA2
 
 # Load the required module and activate conda environment
 module load Anaconda3
