@@ -76,3 +76,18 @@ Example:
 sbatch ./scripts/07-comparison.sh
 sbatch ./scripts/08-accession_comparison.sh
 ```
+
+## Part 7: EDTA Transposable Element Annotation ✨🔀💥
+
+For Transposable Element (TE) annotation, the EDTA pipeline was used to annotate repetitive elements in the PacBio HiFi Assembly.
+
+Example:
+
+```bash
+sbatch ./scripts/09-edta_annotation.sh
+```
+
+**Actions:**
+- Load Anaconda and activate the EDTA2 environment.
+- Run the EDTA.pl script on the LJA assembly
+- Transposable elements are annotated in the assembly, with gene masking using TAIR10 CDS data.
