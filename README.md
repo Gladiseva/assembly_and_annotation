@@ -79,11 +79,18 @@ sbatch ./scripts/08-accession_comparison.sh
 
 ## Part 7: EDTA Transposable Element Annotation ✨🔀💥
 
-For Transposable Element (TE) annotation, the EDTA pipeline was used to annotate repetitive elements in the PacBio HiFi Assembly.
+For Transposable Element (TE) annotation, the EDTA pipeline was used to annotate repetitive elements in the PacBio HiFi Assembly (LJA).
 
 Example:
 
 ```bash
+# First clone repo
+git clone https://github.com/oushujun/EDTA.git in $WORKDIR
+
+# Second use EDTA_2.2.x.yml to create conda environment EDTA2
+conda env create --name EDTA2 --file EDTA_2.2.x.yml
+
+# Run script
 sbatch ./scripts/09-edta_annotation.sh
 ```
 
