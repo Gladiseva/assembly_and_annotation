@@ -13,4 +13,4 @@ CONTAINER_DIR=/data/courses/assembly-annotation-course/containers2/TEsorter_1.3.
 cd $WORK_DIR/EDTA_annotation2
 
 apptainer exec -C -H $WORK_DIR -H ${pwd}:/work \
---writable-tmpfs -u $CONTAINER_DIR TEsorter assembly.fasta.mod.EDTA.intact.fa -db rexdb-plant
+--writable-tmpfs -u $CONTAINER_DIR TEsorter /data/users/lgladiseva/annotation_course/EDTA_annotation2/assembly.fasta.mod.EDTA.raw/assembly.fasta.mod.LTR.intact.raw.fa -db rexdb-plant
