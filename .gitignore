@@ -2,3 +2,6 @@
 *.pdf
 *cls.tsv
 *raw.gff3
+*.png
+*.fai
+*.gff3
