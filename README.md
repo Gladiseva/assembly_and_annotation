@@ -108,7 +108,7 @@ Script 10: Sorts transposable elements (TEs) in the assembly output using the TE
 ```bash
 11-full_length_LTRs_identity.R
 ```
-Script 11: Reads the GFF3 annotation of long terminal repeats (LTRs), identifies the most abundant superfamilies, filters out unwanted superfamilies, and initializes a circos plot to visualize TE density.
+Script 11: Reads the GFF3 annotation of long terminal repeats (LTRs), identifies the most abundant superfamilies, filters out unwanted superfamilies
 
 ```bash
 12-fai.sh
