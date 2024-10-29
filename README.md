@@ -98,3 +98,24 @@ sbatch ./scripts/09-edta_annotation.sh
 - Load Anaconda and activate the EDTA2 environment.
 - Run the EDTA.pl script on the LJA assembly
 - Transposable elements are annotated in the assembly, with gene masking using TAIR10 CDS data.
+
+## Part 8: TE Analysis and Visualization Scripts 📊
+```bash
+10-sortTE.sh
+```
+Script 10: Sorts transposable elements (TEs) in the assembly output using the TEsorter container.
+
+```bash
+11-full_length_LTRs_identity.R
+```
+Script 11: Reads the GFF3 annotation of long terminal repeats (LTRs), identifies the most abundant superfamilies, filters out unwanted superfamilies, and initializes a circos plot to visualize TE density.
+
+```bash
+12-fai.sh
+```
+Script 12: Utilizes SAMtools to create an index (FAI) for the assembly FASTA file.
+
+```bash
+13-circle.R
+```
+Script 13: Generates a circos plot to visualize the density of TEs across the top 20 longest scaffolds, defining colors for different superfamilies and adding a legend for clarity.
