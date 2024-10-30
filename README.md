@@ -119,3 +119,11 @@ Script 12: Utilizes SAMtools to create an index (FAI) for the assembly FASTA fil
 13-circle.R
 ```
 Script 13: Generates a circos plot to visualize the density of TEs across the top 20 longest scaffolds, defining colors for different superfamilies and adding a legend for clarity.
+
+## Part 9: Gene Annotation with MAKER 🧬📝
+The 14-maker.sh script runs the MAKER pipeline to annotate genes on the assembled PacBio HiFi genome.
+
+Example:
+```bash
+sbatch ./scripts/14-maker.sh
+```
