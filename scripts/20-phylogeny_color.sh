@@ -37,4 +37,4 @@ grep -h -e "TAR" $GYPSY_DIR $GYPSY_BRASS | cut -f 1 | sed 's/:/_/' | sed 's/#.*/
 # summary counts file
 tail -n +35 $SUMMARY_DIR | head -n -48 | awk '{print $1 "," $2}' > counts.txt
 # another option
-awk '{if($1 ~ /TE_/ && $2 ~ /^[0-9]+$/) print $1 "," $2}' assembly.fasta.mod.EDTA.TEanno.sum > TE_abundance.txt
+#awk '{if($1 ~ /TE_/ && $2 ~ /^[0-9]+$/) print $1 "," $2}' assembly.fasta.mod.EDTA.TEanno.sum > TE_abundance.txt
