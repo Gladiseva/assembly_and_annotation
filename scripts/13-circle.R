@@ -1,81 +1,42 @@
+# Load necessary libraries
 library(circlize)
-
+library(ComplexHeatmap)
 library(ape)
+library(GenomicRanges)  # Helps with genomic range manipulations if needed
 
-
-anno_data=read.gff("assembly.fasta.mod.EDTA.TEanno.gff3",na.strings = c(".","?"),GFF3 = T)
-head(anno_data)
-
+# Load and filter the TE annotation data
+anno_data <- read.gff("assembly.fasta.mod.EDTA.TEanno.gff3", na.strings = c(".", "?"), GFF3 = TRUE)
 superfamily_counts <- table(anno_data$type)
 
-# Step 2: Identify the most abundant superfamily
+# Identify the most abundant superfamily
 most_abundant_superfamily <- names(superfamily_counts)[which.max(superfamily_counts)]
-
-# Step 3: Filter out the most abundant superfamily from the dataframe
 filtered_te_annotations <- anno_data[anno_data$type != most_abundant_superfamily, ]
 
-superfamily_counts_2 <- table(filtered_te_annotations$type)
+# Further filter out unwanted superfamilies
+unwanted_superfamilies <- c("target_site_duplication", "repeat_region", "long_terminal_repeat", 'LTR_retrotransposon')
+filtered_te_annotations <- filtered_te_annotations[!(filtered_te_annotations$type %in% unwanted_superfamilies), ]
 
-superfamily_counts_2 <- superfamily_counts_2[superfamily_counts_2 > 0]
-
-most_abundant_superfamilies <- names(sort(superfamily_counts_2, decreasing = TRUE))
-
-# Filter for only the most abundant superfamilies
-filtered_te_annotations$seqid <- gsub("contig_","", filtered_te_annotations$seqid)
-
-# Step 1: Filter out unwanted superfamilies from the original data
-unwanted_superfamilies <- c("target_site_duplication", "repeat_region", "long_terminal_repeat")
-
-filtered_te_annotations_2 <- filtered_te_annotations[!(filtered_te_annotations$type %in% unwanted_superfamilies), ]
-
-superfamily_counts_3 <- table(filtered_te_annotations_2$type)
-
-superfamily_counts_3 <- superfamily_counts_3[superfamily_counts_3 > 0]
-
-most_abundant_superfamilies <- names(sort(superfamily_counts_3, decreasing = TRUE))
-
-View(filtered_te_annotations_2)
-
-
-fai_data <- read.table("assembly.fasta.fai", sep="\t", header=FALSE)
-
-# rename contig
-fai_data$V1 <- gsub("contig_","", fai_data$V1)
-
-# Sort the data by scaffold length (column V2) in descending order
+# Prepare the FAI data and sort to find the top 20 longest scaffolds
+fai_data <- read.table("assembly.fasta.fai", sep = "\t", header = FALSE)
+fai_data$V1 <- gsub("contig_", "", fai_data$V1)
 fai_data_sorted <- fai_data[order(-fai_data$V2), ]
-
-# Select the top 20 longest scaffolds
 top_20_scaffolds <- fai_data_sorted[1:20, ]
 
-# Check the top 20 scaffolds
-print(top_20_scaffolds)
-
-# Create ideogram data
-# Column 1: Scaffold names
-# Column 2: Start position (0)
-# Column 3: End position (scaffold length)
+# Prepare ideogram data for the circos plot
 ideogram_data <- data.frame(
   scaffold = top_20_scaffolds$V1,
   start = 0,
   end = top_20_scaffolds$V2
 )
 
-# Check ideogram data
-head(ideogram_data)
-
-
-# Initialize circos plot
+# Initialize circos plot with the ideogram data
+circos.clear()
 circos.genomicInitialize(ideogram_data)
 
-
-# Define colors for the superfamilies
-superfamily_colors <- c(
-  "red", "blue", "green", "purple", "orange", "yellow", 
-  "cyan","magenta"
-)  # Adjust based on your needs
-
-# Plot TE density for each superfamily
+# Define colors for the superfamilies and plot the density
+superfamily_colors <- c( "orange", "magenta")
+most_abundant_superfamilies <- c('Gypsy_LTR_retrotransposon',"Copia_LTR_retrotransposon")
+  
 for (i in 1:length(most_abundant_superfamilies)) {
   # Filter the data for the current superfamily
   superfamily_data <- filtered_te_annotations_2[filtered_te_annotations_2$type == most_abundant_superfamilies[i],]

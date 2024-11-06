@@ -2,7 +2,7 @@ library(tidyverse)
 library(data.table)
 
 # Load the data
-anno_data=read.table("assembly.fasta.mod.LTR.intact.raw.gff3",header=F,sep="\t")
+anno_data=read.table("scripts/assembly.fasta.mod.LTR.intact.raw.gff3",header=F,sep="\t")
 head(anno_data)
 # Get the classification table
 #classification=fread("assembly.fasta.mod.EDTA.raw/assembly.fasta.mod.LTR.intact.raw.fa.anno.list")
@@ -75,9 +75,9 @@ anno_data_filtered_classified$Clade=as.factor(anno_data_filtered_classified$Clad
 
 # Create a f plots for each Superfamily
 plot_sf= ggplot(anno_data_filtered_classified, aes(x = Identity)) +
-        geom_histogram(color="black", fill="grey")+
-        facet_grid(Superfamily ~ .) +  
-        cowplot::theme_cowplot() 
+  geom_histogram(color="black", fill="grey")+
+  facet_grid(Superfamily ~ .) +  
+  cowplot::theme_cowplot() 
 
 
 pdf("01_full-length-LTR-RT-superfamily.pdf")
