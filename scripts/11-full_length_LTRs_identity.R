@@ -12,7 +12,7 @@ head(anno_data)
 # TEsorter assembly.fasta.mod.EDTA.raw/assembly.fasta.mod.LTR.intact.fa -db rexdb-plant
 # It will be named as assembly.fasta.mod.LTR.intact.fa.rexdb-plant.cls.tsv
 # Then run the following command in R:
-classification=fread("assembly.fasta.mod.EDTA.intact.fa.rexdb-plant.cls.tsv")
+classification=fread("scripts/assembly.fasta.mod.EDTA.intact.fa.rexdb-plant.cls.tsv")
 
 head(classification)
 # Separate first column into two columns at "#", name the columns "Name" and "Classification"
@@ -87,7 +87,7 @@ dev.off()
 
 # Create plots for each clade with a specified binwidth
 plot_cl = ggplot(anno_data_filtered_classified, aes(x = Identity)) +
-  geom_histogram(color = "black", fill = "grey", binwidth = 0.05) +  # Adjust binwidth
+  geom_histogram(color = "black", fill = "grey") +  # Adjust binwidth
   facet_grid(Clade ~ Superfamily) +
   cowplot::theme_cowplot()
 
