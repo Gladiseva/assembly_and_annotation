@@ -132,3 +132,10 @@ Example:
 ```bash
 sbatch ./scripts/14-maker.sh
 ```
+
+## Part 10: Transposable Element Dynamics and Visualization ✨📊
+This part involves analyzing the dynamics of transposable elements (TEs) in assembled genome (parsing and visualizing the RepeatMasker output, estimating TE divergence over time, and generating plots to understand TE dynamics in terms of sequence divergence).
+
+Overview
+- **TE Dynamics Analysis** ```bash(scripts/17-te_dynamics.sh)``` 🧬🔍: This script processes the RepeatMasker outputs, calculates the divergence of TEs, and prepares the data for visualization.
+- **TE Divergence Visualization** ```bash(scripts/18-plot_div.R)``` 📈🎨: This R script visualizes the TE dynamics, specifically focusing on the age (divergence) of the transposable elements.
