@@ -9,16 +9,14 @@
 ANNOTATION="/data/users/lgladiseva/annotation_course/gene_annotation/final/filtered.genes.renamed.final.gff3"
 OUTPUT_DIR="/data/users/lgladiseva/annotation_course/gene_annotation"
 
-#number of genes
+#counts
 awk '$3 == "gene" {count++} END {print "gene: " count}' $ANNOTATION > $OUTPUT_DIR/stats.txt
-
-#number of mRNAs
 awk '$3 == "mRNA" {count++} END {print "mRNA: " count}' $ANNOTATION >> $OUTPUT_DIR/stats.txt
 
-#number of genes with functional annotation
+#with functional annotation
 awk '$3 == "gene" {print $9}' $ANNOTATION | grep -c "InterPro" >> $OUTPUT_DIR/stats.txt
 
-# median, max, min of gene length, mRNA length, exon length
+# gene, mRNA, exon (median, max, min of length)
 awk '$3 == "gene" { print $5 - $4 + 1 }' $ANNOTATION > $OUTPUT_DIR/gene_lengths.txt
 awk '$3 == "mRNA" { print $5 - $4 + 1 }' $ANNOTATION > $OUTPUT_DIR/mRNA_lengths.txt
 awk '$3 == "exon" { print $5 - $4 + 1 }' $ANNOTATION > $OUTPUT_DIR/exon_lengths.txt
