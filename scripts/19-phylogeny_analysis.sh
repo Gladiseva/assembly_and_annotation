@@ -34,7 +34,7 @@ apptainer exec --bind /data --writable-tmpfs -u $CONTAINER_DIR TEsorter $WORK_DI
 apptainer exec --bind /data --writable-tmpfs -u $CONTAINER_DIR TEsorter $WORK_DIR/Gypsy_Brassicaceae.fa -db rexdb-plant
 
 # extract sequences for Copia Ty1-RT
-grep Ty1-RT $WORK_DIR/Copia_Brassicaceae.rexdb-plant.dom.faa > $WORK_DIR/copia_brass_list.txt
+grep Ty1-RT $WORK_DIR/Copia_Brassicaceae.fa.rexdb-plant.dom.faa > $WORK_DIR/copia_brass_list.txt
 sed -i 's/>//' $WORK_DIR/copia_brass_list.txt
 sed -i 's/ .\+//' $WORK_DIR/copia_brass_list.txt
 seqkit grep -f $WORK_DIR/copia_brass_list.txt $WORK_DIR/Copia_Brassicaceae.fa.rexdb-plant.dom.faa -o $WORK_DIR/Copia_brass_RT.fasta
