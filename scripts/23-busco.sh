@@ -40,18 +40,4 @@ awk '{
     }
 }' > $OUT_DIR/longest_proteins.txt
 
-seqkit grep -f $OUT_DIR/longest_proteins.txt $WORK_DIR/assembly.all.maker.fasta.all.maker.proteins.fasta.renamed.filtered.fasta > $WORK_DIR/assembly.all.maker.fasta.all.maker.proteins.fasta.renamed.filtered.longest.fasta
-
-# run BUSCO on the longest proteins and longest transcripts
-busco -f -i  $WORK_DIR/assembly.all.maker.fasta.all.maker.transcripts.fasta.renamed.filtered.longest.fasta -l brassicales_odb10 -o $OUT_DIR/transcripts -m transcriptome
-busco -f -i $WORK_DIR/assembly.all.maker.fasta.all.maker.proteins.fasta.renamed.filtered.longest.fasta -l brassicales_odb10 -o $OUT_DIR/proteins -m proteins
-
-## create busco plot
-cp $OUT_DIR/transcripts/short_summary.specific.brassicales_odb10.transcripts.txt $PLOT_DIR/.
-cp $OUT_DIR/proteins/short_summary.specific.brassicales_odb10.proteins.txt $PLOT_DIR/.
-
-cd $PLOT_DIR
-wget https://gitlab.com/ezlab/busco/-/raw/master/scripts/generate_plot.py
-
-python3 generate_plot.py -wd $PLOT_DIR
-                                                                                                                                                                                          1,1           Top
+seqkit grep -f $OUT_DIR/longest_proteins.txt $WORK_DIR/assembly.all.maker.fasta.all.maker.proteins.fasta.renamed.filtered.fasta > $WORK_DIR/assembly.all.maker.fasta.all.maker.proteins.fasta.renamed.filtered.longest.fasta                                                                                                                                           1,1           Top
