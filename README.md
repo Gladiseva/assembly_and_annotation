@@ -162,4 +162,16 @@ Overview
 - **prepares data for OMARK (gene structure prediction)** ```bash(scripts/30-prep_omark.sh)```
 - **OMARK analysis** ```bash(scripts/31-omark.sh)```
 - **deals with missing fragments in sequence data** ```bash(scripts/32-fragment_missing.sh)```
-- **Run miniprot** ```bash(scripts/32-2-miniprot.sh)``` 
+- **Run miniprot** ```bash(scripts/32-2-miniprot.sh)```
+
+## Part 14:  Data Organization & Execution 📂🔄🚀
+
+Overview
+- **prepares directories and datasets for GeneSpace analysis** ```scripts/33-prepare_genspace_folders.R + 34-run_33.sh```
+- **performs GeneSpace analysis** ```35-genespace.R + bash(scripts/36-run_35.sh)```
+
+## Part 14:  Post-Processing & Visualization 📊 
+
+Overview
+- **parses orthologs** ```37-parse_ortho.R + 38-run_37.sh```
+- **visualizing the analysis results** ```39-visulaisation_results.ipynb```
