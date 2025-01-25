@@ -139,3 +139,10 @@ This part involves analyzing the dynamics of transposable elements (TEs) in asse
 Overview
 - **TE Dynamics Analysis** ```bash(scripts/17-te_dynamics.sh)``` 🧬🔍: This script processes the RepeatMasker outputs, calculates the divergence of TEs, and prepares the data for visualization.
 - **TE Divergence Visualization** ```bash(scripts/18-plot_div.R)``` 📈🎨: This R script visualizes the TE dynamics, specifically focusing on the age (divergence) of the transposable elements.
+
+## Part 11: Phylogeny Analysis and Visualization 🌳🔬
+This part of the project involves analyzing the phylogenetic relationships of transposable element (TE) families, specifically focusing on Copia and Gypsy superfamilies. We use sequence alignment and tree-building tools to explore these relationships.
+
+Overview
+- **Copia and Gypsy Sequence Extraction, Sequence Alignment with Clustal-Omega, Phylogenetic Tree Construction** ```bash(scripts/scripts/19-phylogeny_analysis.sh)```
+- **Phylogeny Visualization with Color Strips** ```bash(scripts/20-phylogeny_color.sh)```
