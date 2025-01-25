@@ -170,7 +170,7 @@ Overview
 - **prepares directories and datasets for GeneSpace analysis** ```scripts/33-prepare_genspace_folders.R + 34-run_33.sh```
 - **performs GeneSpace analysis** ```35-genespace.R + bash(scripts/36-run_35.sh)```
 
-## Part 14:  Post-Processing & Visualization 📊 
+## Part 15:  Post-Processing & Visualization 📊 
 
 Overview
 - **parses orthologs** ```37-parse_ortho.R + 38-run_37.sh```
