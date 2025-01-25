@@ -144,5 +144,22 @@ Overview
 This part of the project involves analyzing the phylogenetic relationships of transposable element (TE) families, specifically focusing on Copia and Gypsy superfamilies. We use sequence alignment and tree-building tools to explore these relationships.
 
 Overview
-- **Copia and Gypsy Sequence Extraction, Sequence Alignment with Clustal-Omega, Phylogenetic Tree Construction** ```bash(scripts/scripts/19-phylogeny_analysis.sh)```
+- **Copia and Gypsy Sequence Extraction, Sequence Alignment with Clustal-Omega, Phylogenetic Tree Construction** ```bash(scripts/19-phylogeny_analysis.sh)```
 - **Phylogeny Visualization with Color Strips** ```bash(scripts/20-phylogeny_color.sh)```
+
+## Part 12: Data Preparation & Preprocessing (BUSCO & BLAST) 🛠️📊🔬
+
+Overview
+- **Processes Maker outputs** ```bash(scripts/21-maker_output_prep.sh)```
+- **Statistics on annotations** ```bash(scripts/22-annotation_stats.sh)```
+- **Processes BUSCO, run, generate plots based on BUSCO results** ```bash(scripts/23-busco.sh), bash(scripts/24-busco_transcripts.sh), bash(scripts/25-busco_proteins.sh), 26-busco_plots.sh```
+- **Performs BLAST search and back annotate** ```bash(scripts/27-BLAST.sh), bash(scripts/28-back_anotate_blast.sh)```
+
+## Part 13: Data Analysis (OMARK + miniprot) 📊🔍💻 
+
+Overview
+- **Prepares FASTA index files** ```bash(scripts/29-prepare_fai.sh)```
+- **prepares data for OMARK (gene structure prediction)** ```bash(scripts/30-prep_omark.sh)```
+- **OMARK analysis** ```bash(scripts/31-omark.sh)```
+- **deals with missing fragments in sequence data** ```bash(scripts/32-fragment_missing.sh)```
+- **Run miniprot** ```bash(scripts/32-2-miniprot.sh)``` 
