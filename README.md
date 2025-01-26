@@ -175,3 +175,4 @@ Overview
 Overview
 - **parses orthologs** ```37-parse_ortho.R + 38-run_37.sh```
 - **visualizing the analysis results** ```39-visulaisation_results.ipynb```
+- - **calculate_synteny** ```synteny.R```
